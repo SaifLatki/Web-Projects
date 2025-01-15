@@ -1,41 +1,57 @@
 
+import { BookOpen, Facebook, Twitter, Instagram } from 'lucide-react';
+
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-gray-300 py-16">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer className="bg-stone-900 text-white">
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           <div>
-            <h2 className="text-2xl font-bold mb-4">E-Book App</h2>
-            <p>Your gateway to endless reading. Explore thousands of eBooks across various genres and enjoy reading anywhere, anytime.</p>
+            <div className="flex items-center space-x-3 mb-4">
+              <BookOpen className="w-6 h-6 text-amber-400" />
+              <span className="text-lg font-bold">E-Book</span>
+            </div>
+            <p className="text-sm text-stone-400">
+              Your gateway to endless reading. Discover stories that inspire, educate, and entertain.
+            </p>
           </div>
+          
           <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+            <h3 className="font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              <li><a href="/e-book-app/src/Pages/Home.jsx" className="hover:underline">Home</a></li>
-              <li><a href="#" className="hover:underline">Categories</a></li>
-              <li><a href="#" className="hover:underline">Bestsellers</a></li>
-              <li><a href="#" className="hover:underline">New Releases</a></li>
-              <li><a href="#" className="hover:underline">Contact Us</a></li>
+              <li><a href="/books" className="text-sm text-stone-400 hover:text-amber-400 transition-colors">Books</a></li>
+              <li><a href="/genres" className="text-sm text-stone-400 hover:text-amber-400 transition-colors">Genres</a></li>
+              <li><a href="/about" className="text-sm text-stone-400 hover:text-amber-400 transition-colors">About</a></li>
             </ul>
           </div>
+          
           <div>
-            <h3 className="text-lg font-semibold mb-4">Connect With Us</h3>
+            <h3 className="font-semibold mb-4">Support</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="hover:underline">Facebook</a></li>
-              <li><a href="#" className="hover:underline">Twitter</a></li>
-              <li><a href="#" className="hover:underline">Instagram</a></li>
-              <li><a href="#" className="hover:underline">LinkedIn</a></li>
+              <li><a href="/faq" className="text-sm text-stone-400 hover:text-amber-400 transition-colors">FAQ</a></li>
+              <li><a href="/privacy" className="text-sm text-stone-400 hover:text-amber-400 transition-colors">Privacy</a></li>
+              <li><a href="/terms" className="text-sm text-stone-400 hover:text-amber-400 transition-colors">Terms</a></li>
             </ul>
           </div>
+          
           <div>
-            <h3 className="text-lg font-semibold mb-4">Subscribe</h3>
-            <p>Sign up for our newsletter to get the latest updates and offers.</p>
-            <input type="email" placeholder="Enter your email" className="bg-gray-800 text-white p-2 rounded-md w-full mt-4" />
-            <button className="bg-green-600 text-white py-2 px-4 rounded-md mt-2">Subscribe</button>
+            <h3 className="font-semibold mb-4">Connect</h3>
+            <div className="flex space-x-4">
+              <a href="#" className="text-stone-400 hover:text-amber-400 transition-colors">
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a href="#" className="text-stone-400 hover:text-amber-400 transition-colors">
+                <Twitter className="w-5 h-5" />
+              </a>
+              <a href="#" className="text-stone-400 hover:text-amber-400 transition-colors">
+                <Instagram className="w-5 h-5" />
+              </a>
+            </div>
           </div>
         </div>
-        <div className="mt-8 text-center">
-          <p className="text-sm">&copy; 2025 E-Book App. All Rights Reserved.</p>
+        
+        <div className="border-t border-stone-800 mt-8 pt-8 text-center">
+          <p className="text-sm text-stone-400">&copy; 2024 E-Book. All rights reserved.</p>
         </div>
       </div>
     </footer>

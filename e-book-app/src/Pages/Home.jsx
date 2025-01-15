@@ -1,72 +1,129 @@
 
+import { ChevronRight } from 'lucide-react';
+import BookCard from '../components/BookCard';
+
+const featuredBooks = [
+  {
+    title: "The Silent Echo",
+    author: "Sarah Mitchell",
+    image: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    price: "$19.99",
+    rating: 4.5
+  },
+  {
+    title: "Beyond the Horizon",
+    author: "James Cooper",
+    image: "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    price: "$24.99",
+    rating: 4.8
+  },
+  {
+    title: "Midnight's Whisper",
+    author: "Elena Rodriguez",
+    image: "https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    price: "$21.99",
+    rating: 4.3
+  },
+  {
+    title: "The Lost Garden",
+    author: "Thomas Wright",
+    image: "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    price: "$18.99",
+    rating: 4.6
+  }
+];
+
+const genres = [
+  { name: 'Fiction', image: 'https://images.unsplash.com/photo-1516979187457-637abb4f9353?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', count: '2.5k Books' },
+  { name: 'Mystery', image: 'https://images.unsplash.com/photo-1587876931567-564ce588bfbd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', count: '1.8k Books' },
+  { name: 'Romance', image: 'https://images.unsplash.com/photo-1474552226712-ac0f0961a954?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', count: '3.2k Books' },
+  { name: 'Sci-Fi', image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', count: '1.5k Books' }
+];
 
 const Home = () => {
   return (
-    <div className="bg-stone-700 from-blue-100 to-blue-200 min-h-screen">
-        <div
-        className="container mx-auto px-4 py-16 text-center bg-cover bg-center bg-no-repeat"
-        style={{
-            backgroundImage: `url('https://images.pexels.com/photos/8546475/pexels-photo-8546475.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')`,
-            height: '100vh',
-            padding: '10px',
-        }}
-        >
-        <div className="bg-black bg-opacity-50 p-10 rounded-lg shadow-lg">
-            <h1 className="text-5xl font-bold text-white mb-6">Welcome to E-Book App</h1>
-            <p className="text-xl text-gray-200 mb-8">
-            Your gateway to endless reading. Explore thousands of eBooks across various genres and enjoy reading anywhere, anytime.
+    <div className="min-h-screen bg-stone-50">
+      {/* Hero Section */}
+      <div className="relative h-[80vh] bg-gradient-to-br from-stone-900 to-stone-800 overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute inset-0 bg-gradient-to-r from-stone-900 via-transparent to-transparent" />
+          <img 
+            src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+            alt="Books"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="relative container mx-auto px-4 h-full flex items-center">
+          <div className="max-w-2xl">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+              Your Journey Through
+              <span className="text-amber-400"> Stories </span>
+              Begins Here
+            </h1>
+            <p className="text-lg text-stone-300 mb-8 max-w-xl">
+              Discover a world of endless possibilities through our carefully curated collection of digital books.
             </p>
-            <button className="bg-blue-600 text-white px-6 py-3 rounded-md text-lg hover:bg-blue-700 transition duration-300">
-            Start Reading
-            </button>
+            <div className="flex flex-wrap gap-4">
+              <button className="bg-amber-400 text-stone-900 px-8 py-3 rounded-full font-medium hover:bg-amber-300 transition">
+                Explore Books
+              </button>
+              <button className="border-2 border-stone-300 text-stone-300 px-8 py-3 rounded-full font-medium hover:bg-stone-300 hover:text-stone-900 transition">
+                View Categories
+              </button>
+            </div>
+          </div>
         </div>
-        </div>
+      </div>
 
       {/* Featured Books Section */}
-      <div className="bg-Neutral-200 from-purple-100 to-purple-200 py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-semibold text-gray-200 mb-6">Featured Books</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-            {Array(4).fill(0).map((_, index) => (
-              <div key={index} className="bg-white p-4 rounded-md shadow-md">
-                <div className="bg-purple-300 h-48 rounded-md mb-4"></div>
-                <h3 className="text-xl font-semibold text-purple-800">Book Title</h3>
-                <p className="text-purple-700 mt-2">Author Name</p>
-              </div>
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="flex justify-between items-center mb-10">
+            <div>
+              <h2 className="text-2xl md:text-3xl font-bold text-stone-900 mb-2">Featured Books</h2>
+              <p className="text-stone-600">Handpicked reads you will love</p>
+            </div>
+            <a href="/books" className="group flex items-center text-amber-600 hover:text-amber-700">
+              Browse All 
+              <ChevronRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
+            </a>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            {featuredBooks.map((book, index) => (
+              <BookCard key={index} {...book} />
             ))}
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Famous Books Section */}
-      <div className="bg-zinc-500 from-green-100 to-green-200 py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-semibold text-green-900 mb-6">Famous Books</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-            {Array(4).fill(0).map((_, index) => (
-              <div key={index} className="bg-white p-4 rounded-md shadow-md">
-                <div className="bg-green-300 h-48 rounded-md mb-4"></div>
-                <h3 className="text-xl font-semibold text-green-800">Famous Book Title</h3>
-                <p className="text-green-700 mt-2">Famous Author Name</p>
+      {/* Genres Section */}
+      <section className="py-16 bg-stone-100">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-stone-900 mb-2">Popular Genres</h2>
+          <p className="text-stone-600 mb-10">Find your next read by category</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            {genres.map((genre, index) => (
+              <div
+                key={index}
+                className="group relative rounded-2xl overflow-hidden cursor-pointer"
+              >
+                <div className="aspect-[4/5]">
+                  <img
+                    src={genre.image}
+                    alt={genre.name}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/40 to-transparent" />
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <h3 className="text-xl font-bold text-white mb-1">{genre.name}</h3>
+                  <p className="text-sm text-stone-300">{genre.count}</p>
+                </div>
               </div>
             ))}
           </div>
         </div>
-      </div>
-
-      {/* Genre Section */}
-      <div className="bg-stone-400 from-pink-100 to-pink-200 py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-semibold text-pink-900 mb-6">Genres</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-            {['Fiction', 'Non-fiction', 'Mystery', 'Fantasy', 'Romance', 'Science Fiction', 'Biography', 'Thriller'].map((genre, index) => (
-              <div key={index} className="bg-white p-4 rounded-md shadow-md">
-                <h3 className="text-xl font-semibold text-pink-800">{genre}</h3>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+      </section>
     </div>
   );
 };
