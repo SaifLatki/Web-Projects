@@ -1,4 +1,3 @@
-
 import { ChevronRight } from 'lucide-react';
 import BookCard from '../components/BookCard';
 
@@ -44,7 +43,7 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-stone-50">
       {/* Hero Section */}
-      <div className="relative h-[80vh] bg-gradient-to-br from-stone-900 to-stone-800 overflow-hidden">
+      <div className="relative h-[70vh] bg-gradient-to-br from-stone-900 to-stone-800 overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute inset-0 bg-gradient-to-r from-stone-900 via-transparent to-transparent" />
           <img 
@@ -64,10 +63,10 @@ const Home = () => {
               Discover a world of endless possibilities through our carefully curated collection of digital books.
             </p>
             <div className="flex flex-wrap gap-4">
-              <button className="bg-amber-400 text-stone-900 px-8 py-3 rounded-full font-medium hover:bg-amber-300 transition">
+              <button className="bg-amber-400 text-stone-900 px-6 py-2 rounded-lg font-medium hover:bg-amber-300 transition">
                 Explore Books
               </button>
-              <button className="border-2 border-stone-300 text-stone-300 px-8 py-3 rounded-full font-medium hover:bg-stone-300 hover:text-stone-900 transition">
+              <button className="border-2 border-stone-300 text-stone-300 px-6 py-2 rounded-lg font-medium hover:bg-stone-300 hover:text-stone-900 transition">
                 View Categories
               </button>
             </div>
@@ -76,38 +75,38 @@ const Home = () => {
       </div>
 
       {/* Featured Books Section */}
-      <section className="py-16 bg-white">
+      <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center mb-10">
+          <div className="flex justify-between items-center mb-8">
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold text-stone-900 mb-2">Featured Books</h2>
-              <p className="text-stone-600">Handpicked reads you will love</p>
+              <h2 className="text-xl md:text-2xl font-bold text-stone-900 mb-1">Featured Books</h2>
+              <p className="text-stone-600 text-sm">Handpicked reads you will love</p>
             </div>
-            <a href="/books" className="group flex items-center text-amber-600 hover:text-amber-700">
+            <a href="/books" className="group flex items-center text-amber-600 hover:text-amber-700 text-sm">
               Browse All 
               <ChevronRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
             </a>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {featuredBooks.map((book, index) => (
-              <BookCard key={index} {...book} />
+              <BookCard key={index} {...book} className="h-64" />
             ))}
           </div>
         </div>
       </section>
 
       {/* Genres Section */}
-      <section className="py-16 bg-stone-100">
+      <section className="py-12 bg-stone-100">
         <div className="container mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-stone-900 mb-2">Popular Genres</h2>
-          <p className="text-stone-600 mb-10">Find your next read by category</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          <h2 className="text-xl md:text-2xl font-bold text-stone-900 mb-4">Popular Genres</h2>
+          <p className="text-stone-600 text-sm mb-6">Find your next read by category</p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
             {genres.map((genre, index) => (
               <div
                 key={index}
-                className="group relative rounded-2xl overflow-hidden cursor-pointer"
+                className="group relative rounded-lg overflow-hidden cursor-pointer shadow hover:shadow-md transition-shadow"
               >
-                <div className="aspect-[4/5]">
+                <div className="aspect-w-4 aspect-h-5">
                   <img
                     src={genre.image}
                     alt={genre.name}
@@ -115,9 +114,9 @@ const Home = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/40 to-transparent" />
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h3 className="text-xl font-bold text-white mb-1">{genre.name}</h3>
-                  <p className="text-sm text-stone-300">{genre.count}</p>
+                <div className="absolute bottom-0 left-0 right-0 p-4">
+                  <h3 className="text-base font-bold text-white mb-1 truncate">{genre.name}</h3>
+                  <p className="text-xs text-stone-300">{genre.count}</p>
                 </div>
               </div>
             ))}
