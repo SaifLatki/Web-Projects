@@ -1,7 +1,9 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/NavBar';
 import Footer from './components/Footer';
 import Home from './Pages/Home';
 import BookCard from './components/BookCard';
+import About from './Pages/About';
 
 function App() {
   const books = [
@@ -30,23 +32,27 @@ function App() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <Navbar />
-      <main className="flex-grow">
-        <Home />
-        <div className="container mx-auto p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {books.map((book, index) => (
-            <BookCard 
-              key={index}
-              title={book.title}
-              author={book.author}
-              image={book.image}
-              price={book.price}
-              rating={book.rating}
-            />
-          ))}
-        </div>
-      </main>
-      <Footer />
+      <Router>
+        <Navbar />
+        <Routes>
+          <main className="flex-grow">
+            <Route path="/" element={<Home />} />
+            <Route path="/books" element={books.map((book, index) => (
+              <BookCard 
+                key={index}
+                title={book.title}
+                author={book.author}
+                image={book.image}
+                price={book.price}
+                rating={book.rating}
+              />
+            ))}/>
+            <Route path="/genres" element={<BookCard />} />
+            <Route path="/about" element={<About />} />
+          </main>
+        </Routes>
+        <Footer />
+      </Router>
     </div>
   );
 }
