@@ -5,7 +5,7 @@ import Home from './Pages/Home';
 import BookCard from './components/BookCard';
 import About from './Pages/About';
 
-function App() {
+function BooksList() {
   const books = [
     {
       title: 'The Great Gatsby',
@@ -31,26 +31,34 @@ function App() {
   ];
 
   return (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+      {books.map((book, index) => (
+        <BookCard
+          key={index}
+          title={book.title}
+          author={book.author}
+          image={book.image}
+          price={book.price}
+          rating={book.rating}
+        />
+      ))}
+    </div>
+  );
+}
+
+function App() {
+  return (
     <div className="flex flex-col min-h-screen">
       <Router>
         <Navbar />
-        <Routes>
-          <main className="flex-grow">
+        <main className="flex-grow p-4">
+          <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/books" element={books.map((book, index) => (
-              <BookCard 
-                key={index}
-                title={book.title}
-                author={book.author}
-                image={book.image}
-                price={book.price}
-                rating={book.rating}
-              />
-            ))}/>
+            <Route path="/books" element={<BooksList />} />
             <Route path="/genres" element={<BookCard />} />
             <Route path="/about" element={<About />} />
-          </main>
-        </Routes>
+          </Routes>
+        </main>
         <Footer />
       </Router>
     </div>

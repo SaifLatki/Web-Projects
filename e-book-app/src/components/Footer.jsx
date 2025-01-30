@@ -1,5 +1,4 @@
 import { BookOpen, Facebook, Twitter, Instagram } from 'lucide-react';
-import about from '../Pages/About';
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white">
@@ -20,7 +19,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><a href="/books" className="text-sm text-gray-400 hover:text-yellow-400 transition-colors">Books</a></li>
               <li><a href="/genres" className="text-sm text-gray-400 hover:text-yellow-400 transition-colors">Genres</a></li>
-              <li><a href={about} className="text-sm text-gray-400 hover:text-yellow-400 transition-colors">About</a></li>
+              <li><a href="/about" className="text-sm text-gray-400 hover:text-yellow-400 transition-colors">About</a></li>
             </ul>
           </div>
 

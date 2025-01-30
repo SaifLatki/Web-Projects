@@ -1,87 +1,83 @@
-
 const About = () => {
   return (
-    <div className="bg-gradient-to-b from-gray-50 to-gray-200 min-h-screen">
+    <div className="bg-gradient-to-b from-indigo-50 to-indigo-100 min-h-screen">
       {/* Header Section */}
-      <header className="bg-blue-800 text-white py-8 shadow-lg">
+      <header className="bg-gradient-to-r from-gray-500 to-slate-700 text-white py-10 shadow-lg">
         <div className="container mx-auto text-center">
-          <h1 className="text-4xl font-bold">About Us</h1>
-          <p className="text-lg mt-2">
-            Learn more about our mission, values, and why we’re passionate about e-books.
+          <h1 className="text-5xl font-extrabold tracking-wide p-5">About Us</h1>
+          <p className="text-lg mt-2 max-w-2xl mx-auto opacity-90">
+            Discover our mission, values, and why we are passionate about e-books.
           </p>
         </div>
       </header>
 
       {/* Main Content */}
-      <main className="container mx-auto px-6 py-12">
+      <main className="container mx-auto px-6 py-16">
         {/* Who We Are Section */}
         <section className="text-center mb-16">
-          <h2 className="text-3xl font-semibold text-blue-800 mb-4">Who We Are</h2>
-          <p className="text-lg text-gray-700 leading-relaxed">
-            Our e-book app is dedicated to providing readers with a seamless, convenient, and enjoyable way to explore
-            their favorite books and discover new ones. With a passion for stories, we’ve created a platform that’s
-            accessible, user-friendly, and built for book lovers everywhere.
+          <h2 className="text-4xl font-bold text-blue-700 mb-6">Who We Are</h2>
+          <p className="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
+            We’re dedicated to creating a seamless and enjoyable reading experience. Our e-book platform provides an
+            extensive collection of books, intuitive features, and tools designed for book lovers.
           </p>
         </section>
 
         {/* Mission Section */}
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-16">
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
           <div>
-            <h3 className="text-2xl font-semibold text-blue-800 mb-4">Our Mission</h3>
+            <h3 className="text-3xl font-semibold text-purple-700 mb-4">Our Mission</h3>
             <p className="text-gray-700 leading-relaxed">
-              We aim to revolutionize the way people engage with books by offering a vast library of titles, intuitive
-              features, and tools to enhance the reading experience. Whether you’re an avid reader or just getting
-              started, our app is built to inspire and delight.
+              We aim to revolutionize digital reading by offering a vast library, advanced reading tools, and a
+              community-driven experience. Whether you are an avid reader or just beginning, our platform is built for
+              you.
             </p>
           </div>
           <div>
             <img
               src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f"
               alt="Mission Illustration"
-              className="rounded-2xl shadow-lg w-full object-cover h-64 md:h-auto"
+              className="rounded-2xl shadow-lg w-full object-cover h-64 md:h-auto transform hover:scale-105 transition duration-300"
             />
           </div>
         </section>
 
         {/* Features Section */}
-        <section className="bg-white rounded-2xl shadow-md p-8 mb-16">
-          <h3 className="text-2xl font-semibold text-blue-800 mb-4 text-center">What We Offer</h3>
+        <section className="bg-white rounded-2xl shadow-md p-12 mb-16">
+          <h3 className="text-3xl font-semibold text-purple-700 mb-8 text-center">What We Offer</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
-            <div className="p-6 bg-blue-50 rounded-xl shadow-md hover:shadow-lg transition duration-300">
-              <h4 className="text-lg font-semibold text-blue-800 mb-2">Vast Library</h4>
-              <p className="text-gray-700">
-                Access a wide range of genres, from fiction to self-help, at your fingertips.
-              </p>
-            </div>
-            <div className="p-6 bg-blue-50 rounded-xl shadow-md hover:shadow-lg transition duration-300">
-              <h4 className="text-lg font-semibold text-blue-800 mb-2">Personalized Reading</h4>
-              <p className="text-gray-700">
-                Tailor your experience with bookmarks, highlights, and custom recommendations.
-              </p>
-            </div>
-            <div className="p-6 bg-blue-50 rounded-xl shadow-md hover:shadow-lg transition duration-300">
-              <h4 className="text-lg font-semibold text-blue-800 mb-2">Offline Access</h4>
-              <p className="text-gray-700">
-                Download your favorite books to read anytime, anywhere—even offline.
-              </p>
-            </div>
+            {[
+              { title: "Vast Library", desc: "Access a variety of genres at your fingertips." },
+              { title: "Personalized Reading", desc: "Tailor your experience with bookmarks and highlights." },
+              { title: "Offline Access", desc: "Download books and read anywhere, even offline." },
+            ].map((feature, index) => (
+              <div
+                key={index}
+                className="p-8 bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl shadow-md hover:shadow-lg transition duration-300"
+              >
+                <h4 className="text-xl font-semibold text-purple-700 mb-2">{feature.title}</h4>
+                <p className="text-gray-700">{feature.desc}</p>
+              </div>
+            ))}
           </div>
         </section>
 
         {/* Team Section */}
         <section className="text-center mb-16">
-          <h3 className="text-2xl font-semibold text-blue-800 mb-4">Meet the Team</h3>
-          <p className="text-gray-700 mb-6">
-            Our team of passionate developers and book enthusiasts work tirelessly to bring you the best e-reading
-            experience.
+          <h3 className="text-3xl font-semibold text-blue-700 mb-6">Meet the Team</h3>
+          <p className="text-gray-700 mb-8 max-w-xl mx-auto">
+            Our passionate developers and book enthusiasts work tirelessly to bring you the best e-reading experience.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            {/* Replace these placeholders with actual team images */}
-            {Array(3).fill(0).map((_, index) => (
-              <div key={index} className="p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition duration-300">
-                <div className="bg-blue-200 h-40 rounded-md mb-4"></div>
-                <h4 className="text-lg font-semibold text-blue-800">Team Member {index + 1}</h4>
-                <p className="text-gray-700">Role</p>
+            {["Alice", "Bob", "Charlie"].map((name, index) => (
+              <div
+                key={index}
+                className="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition duration-300"
+              >
+                <div className="bg-gradient-to-r from-blue-400 to-purple-400 h-40 rounded-md mb-4 flex items-center justify-center">
+                  <span className="text-white text-2xl font-bold">T{index + 1}</span>
+                </div>
+                <h4 className="text-lg font-semibold text-purple-700">{name}</h4>
+                <p className="text-gray-700">Lead Developer</p>
               </div>
             ))}
           </div>
@@ -89,13 +85,13 @@ const About = () => {
 
         {/* Call to Action */}
         <section className="text-center">
-          <h3 className="text-2xl font-semibold text-blue-800 mb-4">Join Us</h3>
-          <p className="text-gray-700 mb-4">
+          <h3 className="text-3xl font-semibold text-purple-700 mb-4">Join Us</h3>
+          <p className="text-gray-700 mb-6 max-w-xl mx-auto">
             Become part of our growing community and experience the joy of reading like never before.
           </p>
           <a
             href="/signup"
-            className="bg-blue-800 text-white py-3 px-6 rounded-xl shadow-md hover:bg-blue-700 transition duration-300"
+            className="bg-gradient-to-r from-blue-700 to-purple-700 text-white py-3 px-8 rounded-xl shadow-md hover:scale-105 transition duration-300"
           >
             Get Started
           </a>

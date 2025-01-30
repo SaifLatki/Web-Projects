@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import { BookOpen, Search, User, ShoppingCart, Menu, X } from 'lucide-react'
+import { BookOpen, Search, User, ShoppingCart, Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,10 +15,10 @@ const Navbar = () => {
           </div>
 
           <div className="hidden md:flex items-center space-x-8">
-            <a href="/" className="text-sm hover:text-yellow-400 transition-colors">Home</a>
-            <a href="/books" className="text-sm hover:text-yellow-400 transition-colors">Books</a>
-            <a href="/genres" className="text-sm hover:text-yellow-400 transition-colors">Genres</a>
-            <a href="/e-book-app/src/Pages/About.jsx" className="text-sm hover:text-yellow-400 transition-colors">About</a>
+            <Link to="/" className="text-sm hover:text-yellow-400 transition-colors">Home</Link>
+            <Link to="/books" className="text-sm hover:text-yellow-400 transition-colors">Books</Link>
+            <Link to="/genres" className="text-sm hover:text-yellow-400 transition-colors">Genres</Link>
+            <Link to="/about" className="text-sm hover:text-yellow-400 transition-colors">About</Link>
           </div>
 
           <div className="flex items-center space-x-4">
@@ -43,11 +43,10 @@ const Navbar = () => {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-gray-800">
             <div className="flex flex-col space-y-4">
-              <a href="/" className="hover:text-yellow-400 transition-colors">Home</a>
-              <a href="/books" className="hover:text-yellow-400 transition-colors">Books</a>
-              <a href="/genres" className="hover:text-yellow-400 transition-colors">Genres</a>
-              <Link to="/about" className="text-sm hover:text-yellow-400 transition-colors">About</Link>
-
+              <Link to="/" className="hover:text-yellow-400 transition-colors">Home</Link>
+              <Link to="/books" className="hover:text-yellow-400 transition-colors">Books</Link>
+              <Link to="/genres" className="hover:text-yellow-400 transition-colors">Genres</Link>
+              <Link to="/about" className="hover:text-yellow-400 transition-colors">About</Link>
             </div>
           </div>
         )}
