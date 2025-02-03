@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import Home from './Pages/Home';
 import BookCard from './components/BookCard';
 import About from './Pages/About';
+import Genre from './Pages/Genre';
 
 function BooksList() {
   const books = [
@@ -55,7 +56,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/books" element={<BooksList />} />
-            <Route path="/genres" element={<BookCard />} />
+            <Route path="/genres" element={<Genre />} />
             <Route path="/about" element={<About />} />
           </Routes>
         </main>
