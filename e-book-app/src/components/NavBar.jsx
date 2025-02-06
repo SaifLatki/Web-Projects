@@ -1,9 +1,10 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 import { useState } from 'react';
 import { BookOpen, Search, User, ShoppingCart, Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showInput, setShowInput] = useState(false);
 
   return (
     <nav className="bg-gray-900/90 backdrop-blur-md text-white fixed w-full z-50">
@@ -11,7 +12,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-3">
             <BookOpen className="w-6 h-6 text-yellow-400" />
-            <span className="text-lg font-bold">E-Book</span>
+            <Link to="/" className="text-lg font-bold">E-Book</Link>
           </div>
 
           <div className="hidden md:flex items-center space-x-8">
@@ -21,10 +22,23 @@ const Navbar = () => {
             <Link to="/about" className="text-sm hover:text-yellow-400 transition-colors">About</Link>
           </div>
 
-          <div className="flex items-center space-x-4">
-            <button className="p-2 hover:text-yellow-400 transition-colors">
-              <Search className="w-5 h-5" />
-            </button>
+          <div className="flex items-center space-x-4 relative">
+              <button
+                className="p-2 hover:text-yellow-400 transition-colors"
+                onClick={() => setShowInput(!showInput)}
+              >
+                <Search className="w-5 h-5" />
+              </button>
+
+              {showInput && (
+                <div className="absolute top-full  mt-2 bg-slate-900 border border-gray-700 text-black shadow-md p-2 rounded-md">
+                  <input
+                    type="text"
+                    className="w-40 p-1 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                    placeholder="Search..."
+                  />
+                </div>
+              )}
             <button className="p-2 hover:text-yellow-400 transition-colors">
               <ShoppingCart className="w-5 h-5" />
             </button>

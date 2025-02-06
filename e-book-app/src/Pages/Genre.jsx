@@ -12,9 +12,9 @@ const Genre = () => {
   ];
 
   return (
-    <div className="container  py-16 px-4 w-full bg-slate-700">
+    <div className="container  py-16 px-4  w-full bg-slate-500">
       <h1 className="text-4xl font-bold text-center text-white mb-10">Explore Book Genres</h1>
-      <div className="grid grid-cols-1 bg-zinc-600 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 bg-zinc-300 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {genres.map((genre, index) => (
           <div key={index} className="bg-slate-700 rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform">
             <img src={genre.image} alt={genre.name} className="w-full h-48 object-cover" />
