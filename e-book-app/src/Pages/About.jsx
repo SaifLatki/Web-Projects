@@ -1,7 +1,6 @@
 const About = () => {
   return (
     <div className="bg-gradient-to-t from-indigo-300 to-indigo-100 min-h-screen">
-      {/* Header Section */}
       <header className="bg-gradient-to-r from-gray-500 to-slate- text-zinc-500 py-10 shadow-lg">
         <div className="container mx-auto text-center">
           <h1 className="text-5xl font-extrabold tracking-wide p-5">About Us</h1>
@@ -11,9 +10,8 @@ const About = () => {
         </div>
       </header>
 
-      {/* Main Content */}
+      
       <main className="container mx-auto px-6 py-16">
-        {/* Who We Are Section */}
         <section className="text-center mb-16">
           <h2 className="text-4xl font-bold text-blue-500 mb-6">Who We Are</h2>
           <p className="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
@@ -22,7 +20,7 @@ const About = () => {
           </p>
         </section>
 
-        {/* Mission Section */}
+       
         <section className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
           <div>
             <h3 className="text-3xl font-semibold text-purple-500 mb-4">Our Mission</h3>
@@ -41,7 +39,6 @@ const About = () => {
           </div>
         </section>
 
-        {/* Features Section */}
         <section className="bg-gray-400 rounded-2xl shadow-md p-12 mb-16">
           <h3 className="text-3xl font-semibold text-purple-100 mb-8 text-center">What We Offer</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
@@ -61,7 +58,7 @@ const About = () => {
           </div>
         </section>
 
-        {/* Team Section */}
+
         <section className="text-center mb-16">
           <h3 className="text-3xl font-semibold text-blue-500 mb-6">Meet the Team</h3>
           <p className="text-gray-700 mb-8 max-w-xl mx-auto">
@@ -83,7 +80,7 @@ const About = () => {
           </div>
         </section>
 
-        {/* Call to Action */}
+
         <section className="text-center">
           <h3 className="text-3xl font-semibold text-sky-800 mb-4">Join Us</h3>
           <p className="text-gray-700 mb-6 max-w-xl mx-auto">

@@ -39,12 +39,15 @@ const Navbar = () => {
                   />
                 </div>
               )}
+          
             <button className="p-2 hover:text-yellow-400 transition-colors">
               <ShoppingCart className="w-5 h-5" />
             </button>
+          <div>
             <button className="hidden md:block p-2 hover:text-yellow-400 transition-colors">
               <User className="w-5 h-5" />
             </button>
+          </div>
             <button 
               className="md:hidden p-2"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
