@@ -6,7 +6,7 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-white shadow-lg fixed w-full z-50">
+    <nav className="bg-orange-200 shadow-lg fixed w-full z-50">
       <div className="container mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
           <Link to="/" className="text-2xl font-bold text-orange-600 hover:text-orange-700 transition-colors">
