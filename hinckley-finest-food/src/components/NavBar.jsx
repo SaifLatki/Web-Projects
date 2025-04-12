@@ -2,10 +2,11 @@ import  { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu as MenuIcon, X } from 'lucide-react';
 
-function Navbar() {
+export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
+    
     <nav className="bg-orange-200 shadow-lg fixed w-full z-50">
       <div className="container mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
@@ -49,5 +50,3 @@ function Navbar() {
     </nav>
   );
 }
-
-export default Navbar;
